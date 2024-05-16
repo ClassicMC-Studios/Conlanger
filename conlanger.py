@@ -5,7 +5,8 @@ clusters = True
 # Set letter glyphs
 con = ['b','v','s','sh','k','kh','n','r']
 vow = ['a','i','o']
-clus = ['shk','sr']
+clus = ['shk','sr','shr','br']
+wordLen = random.randrange(3,10)
 # END CUSTOMIZATION
 
 # Pure random letter generator FIXED tells it which letter group 
@@ -38,7 +39,7 @@ def genWord():
                     word.append(tempLet[0])
                     cvc.append(tempLet[1])
     else:
-        for i in range(5):
+        for i in range(wordLen):
             if i == 0:
                 tempLet = genLetter(random.randrange(0,3))
                 word.append(tempLet[0])
