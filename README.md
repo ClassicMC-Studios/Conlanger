@@ -1,2 +1,12 @@
 # Conlanger
-A word generator for conlangs
+
+> *A simple yet effective word generator*
+
+### Steps
+
+1. Define Consonant Inventory
+2. Define Vowels
+3. Allow or Deny Consonant Clusters
+4. Set which Clusters you would like
+
+***BOOM*** You've got yourself a word
