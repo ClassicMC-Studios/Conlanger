@@ -1,13 +1,14 @@
 import random
 
 # USER COSTOMIZE SETTINGS
-clusters = True
+clusters = False
+endCons = False
 # Set letter glyphs
-con = ['b','v','s','sh','k','kh','n','r']
-vow = ['a','i','o']
-clus = ['shk','sr','shr','br']
-diph = ['ai','eo','uo']
-wordLen = random.randrange(3,6)
+con = ['l','p','s','t','k','n','v']
+vow = ['a','u','i']
+clus = []
+diph = []
+wordLen = random.randrange(2,5)
 # END CUSTOMIZATION
 
 # Pure random letter generator FIXED tells it which letter group 
@@ -26,7 +27,7 @@ def genWord():
     cvc = []
     # Clusters asks if it should include for example ST or SL
     if clusters == False:
-        for i in range(5):
+        for i in range(wordLen):
             if i == 0:
                 tempLet = genLetter(random.randrange(0,2))
                 word.append(tempLet[0])
@@ -61,7 +62,10 @@ def genWord():
                     tempLet = genLetter(fix)
                     word.append(tempLet[0])
                     cvc.append(tempLet[1])
-    print("".join(word))
-    print("".join(cvc))
+    if cvc[len(cvc)-1] == "C" and endCons == False:
+        word.append(genLetter(1)[0])
+    print("### Weston's Conlanger ###")
+    print("Word:"+("".join(word)).capitalize())
+    print("Structure:"+"".join(cvc))
 genWord()
 
