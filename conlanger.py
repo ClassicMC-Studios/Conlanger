@@ -6,6 +6,7 @@ clusters = True
 con = ['b','v','s','sh','k','kh','n','r']
 vow = ['a','i','o']
 clus = ['shk','sr','shr','br']
+diph = ['ai','eo','uo']
 wordLen = random.randrange(3,10)
 # END CUSTOMIZATION
 
@@ -17,7 +18,8 @@ def genLetter(fixed):
         return [vow[random.randrange(1,len(vow))],'V']
     if fixed == 2:
         return [clus[random.randrange(1,len(clus))],'CC']
-
+    if fixed == 3:
+        return [diph[random.randrange(1,len(diph))],'VV']
 # The word generator itself cvc is an array with 
 def genWord():
     word = []
@@ -46,7 +48,10 @@ def genWord():
                 cvc.append(tempLet[1])
             else:
                 if cvc[i-1] == "C" or cvc[i-1] == "CC":
-                    tempLet = genLetter(1)
+                    fix = random.randrange(1,3)
+                    if fix == 2:
+                        fix+=1
+                    tempLet = genLetter(fix)
                     word.append(tempLet[0])
                     cvc.append(tempLet[1])
                 else:
@@ -59,3 +64,4 @@ def genWord():
     print("".join(word))
     print("".join(cvc))
 genWord()
+print(genLetter(3))
