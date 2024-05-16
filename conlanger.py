@@ -7,7 +7,7 @@ con = ['b','v','s','sh','k','kh','n','r']
 vow = ['a','i','o']
 clus = ['shk','sr','shr','br']
 diph = ['ai','eo','uo']
-wordLen = random.randrange(3,10)
+wordLen = random.randrange(3,6)
 # END CUSTOMIZATION
 
 # Pure random letter generator FIXED tells it which letter group 
@@ -64,4 +64,4 @@ def genWord():
     print("".join(word))
     print("".join(cvc))
 genWord()
-print(genLetter(3))
+
