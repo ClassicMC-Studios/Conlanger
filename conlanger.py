@@ -8,7 +8,7 @@ con = ['l','p','s','t','k','n','v']
 vow = ['a','u','i']
 clus = []
 diph = []
-wordLen = random.randrange(2,5)
+length = [2,10]
 # END CUSTOMIZATION
 
 # Pure random letter generator FIXED tells it which letter group 
@@ -25,6 +25,7 @@ def genLetter(fixed):
 def genWord():
     word = []
     cvc = []
+    wordLen = random.randrange(length[0],length[1])
     # Clusters asks if it should include for example ST or SL
     if clusters == False:
         for i in range(wordLen):
